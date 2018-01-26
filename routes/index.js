@@ -2,20 +2,19 @@ var express = require('express');
 var router = express.Router();
 var db = require('../db/queries');
 
-/* GET home page. */
-router.get('/existingUser', (req, res, next) => {
-  db.checkIfExists(user)
+router.post('/login', (req, res, next) => {
+  db.getUserData(req.body.data)
   .then(data => {
-    res.status(200).json(data);
-  })
-  .catch(err =>{
-    res.status(500).json(err)
+    res.json(data);
   })
 });
 
 
-router.get('/test',(req, res, next) => {
-  res.send({key: 'it worked'})
+router.post('/new', (req, res, next) => {
+  db.createNewUser(req.body.data)
+    .then(data => {
+      res.json(data)
+    })
 })
 
 

@@ -3,7 +3,8 @@ var router = express.Router();
 var db = require('../db/queries');
 
 router.post('/login', (req, res, next) => {
-  db.getUserData(req.body.data)
+  console.log('DATABASE LOG, req.body', req.body);
+  db.getUserData(req.body.data.data)
   .then(data => {
     res.json(data);
   })

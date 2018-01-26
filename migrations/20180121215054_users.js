@@ -6,14 +6,14 @@ exports.up = function(knex, Promise) {
     table.text('last_name').notNullable();
     table.text('email').notNullable();
     table.text('password').notNullable();
-    table.text('userAge')
-    table.text('biologicalSex')
-    table.text('Height')
-    table.text('Weight')
-    table.text('StepCount')
-    table.text('DateOfBirth')
-    table.text('DistanceWalkingRunning')
-    table.text('FlightsClimbed')
+    table.text('userAge');
+    table.text('biologicalSex');
+    table.text('Height');
+    table.text('Weight');
+    table.text('StepCount');
+    table.text('DateOfBirth');
+    table.text('DistanceWalkingRunning');
+    table.text('FlightsClimbed');
   })
 };
 

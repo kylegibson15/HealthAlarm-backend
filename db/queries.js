@@ -1,19 +1,18 @@
 var db = require('./connection');
 
-function checkIfExists(user){
-  return db('users').where('username', user.username, 'password', user.password)
+function getAll(){
+  return db('users').select('*')
+}
+function getUserData(user){
+  return db('users').where({username: user.username, password: user.password})
 }
 
-function signIn(user){
-  return db('users').where('username', username)
-}
-
-function signUp(data){
+function createNewUser(data){
   return db('users').insert(data, '*')
 }
 
 module.exports = {
-  checkIfExists,
-  signIn,
-  signUp,
+  getUserData,
+  createNewUser,
+  getAll,
 }

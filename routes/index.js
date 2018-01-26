@@ -4,7 +4,7 @@ var db = require('../db/queries');
 
 router.post('/login', (req, res, next) => {
   console.log('DATABASE LOG, req.body', req.body);
-  db.getUserData(req.body.data.data)
+  db.getUserData(req.body.data)
   .then(data => {
     res.json(data);
   })

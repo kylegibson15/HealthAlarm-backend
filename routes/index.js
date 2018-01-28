@@ -37,7 +37,7 @@ const EXT_PRICE = "/q/24hrprice";
 const EXT_TOTAL = "/q/totalbc";
 
 // [START bitcoinInfo]
-exports.bitcoinInfo = (req, res) => {
+bitcoinInfo = (req, res) => {
   const assistant = new Assistant({request: req, response: res});
   console.log('bitcoinInfoAction Request headers: ' + JSON.stringify(req.headers));
   console.log('bitcoinInfoAction Request body: ' + JSON.stringify(req.body));
@@ -71,4 +71,7 @@ exports.bitcoinInfo = (req, res) => {
   assistant.handleRequest(actionMap);
 };
 
-module.exports = router;
+module.exports = {
+  router,
+  bitcoinInfo,
+};
